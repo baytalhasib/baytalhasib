@@ -1,0 +1,22 @@
+{
+  "name": "BAYTalhasib Accounting Software",
+  "short_name": "BAYTalhasib",
+  "description": "Financial and accounting system according to Algerian SCF standards",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#2E3B2E", 
+  "theme_color": "#2E3B2E",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

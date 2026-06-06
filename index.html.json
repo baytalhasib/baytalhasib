@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>??? ?????? - BAYTalhasib</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      overflow: hidden; 
+      background-color: #2E3B2E; 
+    }
+    iframe { 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+    }
+  </style>
+</head>
+<body>
+
+  <iframe src="https://script.google.com/macros/s/AKfycbxqu3KaGBmHTc0nKCCNO5FG7d56uPAXPwL7EOV1Fy2qBpd9iVp4VH0FqgbQooe2VYLv/exec"></iframe>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('BAYTalhasib System Ready!'))
+        .catch(err => console.log('Error:', err));
+    }
+  </script>
+</body>
+</html>
