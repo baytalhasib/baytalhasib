@@ -1,44 +1,35 @@
-<div id="install-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 99999; justify-content: center; align-items: center; color: white; font-family: sans-serif; text-align: center; direction: rtl;">
-    <div style="background: #1e1e1e; padding: 30px; border-radius: 12px; max-width: 400px; border: 2px solid #00bcd4; box-shadow: 0px 0px 15px rgba(0,188,212,0.5);">
-        <h2 style="color: #00bcd4; margin-top: 0;">مرحباً بك في بيت الحاسب</h2>
-        <p style="font-size: 15px; line-height: 1.6;">يرجى تثبيت برنامج المحاسبة على سطح المكتب الخاص بك لتتمكن من تسجيل الدخول والمتابعة بأمان وسرعة.</p>
-        <br>
-        <button id="btn-install-now" style="background: #00bcd4; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">
-            تثبيت البرنامج الآن على الجهاز
-        </button>
-    </div>
-</div>
-
-<script>
-let deferredPrompt;
-const installModal = document.getElementById('install-modal');
-const btnInstallNow = document.getElementById('btn-install-now');
-
-const isAppInstalled = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
-if (!isAppInstalled) {
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installModal.style.display = 'flex';
-    });
-}
-
-btnInstallNow.addEventListener('click', async () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-            installModal.style.display = 'none';
-            deferredPrompt = null;
-        } else {
-            alert('تنبيه: يجب تثبيت البرنامج لتتمكن من استخدام نظام بيت الحاسب بنجاح.');
-        }
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>??? ?????? - BAYTalhasib</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      overflow: hidden; 
+      background-color: #2E3B2E; 
     }
-});
+    iframe { 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+    }
+  </style>
+</head>
+<body>
 
-window.addEventListener('appinstalled', (event) => {
-    installModal.style.display = 'none';
-    deferredPrompt = null;
-});
-</script>
+  <iframe src="https://script.google.com/macros/s/AKfycbxqu3KaGBmHTc0nKCCNO5FG7d56uPAXPwL7EOV1Fy2qBpd9iVp4VH0FqgbQooe2VYLv/exec"></iframe>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('BAYTalhasib System Ready!'))
+        .catch(err => console.log('Error:', err));
+    }
+  </script>
+</body>
+</html>
